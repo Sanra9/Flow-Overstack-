@@ -1,0 +1,21 @@
+<div class="row">
+  <div class= "col-sm-3">
+  </div>
+  <div class="contnuevo col-sm-6">
+    <h1>Publicar pregunta</h1>
+    <%= form_for @question do |f| %>  <!-- cada f hace ref a un field del proyecto --->
+      <div>
+        <div>
+         <%= f.text_field :title, placeholder:"Titulo" %>
+       </div>
+       <div>
+         <%= f.text_area :description, placeholder:"Descrpción"%>
+       </div>
+      </div>
+      <%= f.submit "¡Preguntar!", class: "btn btn-primary botonpre"%>
+      <% end %>
+    </div>
+    <div class= "col-sm-3">
+    </div>
+
+</div>

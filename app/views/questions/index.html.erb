@@ -1,0 +1,29 @@
+
+<div class="contindex">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>Preguntas</h1>
+    </div>
+    <div class="col-sm-4">
+      <a href="/questions/new" class="btn btn-primary bot-nuevo" role="button">Hacer una pregunta</a>
+    </div>
+  </div>
+  <hr>
+  <% @questions.each do |q|%>
+    <div class="row" id="num-votos">
+      <div class="col-sm-1 text-center" >
+        <h2><strong><%= q.votes.count %></strong></h2>
+        <p> Votos </p>
+      </div>
+      <div class="col-sm-2 text-center">
+        <h2><strong> <%= q.answers.count %> </strong></h2>
+        <p> Respuestas </p>
+      </div>
+      <div class="col-sm-8 index-pre">
+        <h2><%= link_to q.title, question_path(q) %> </h2>
+        <p><%= q.description %></p>
+      </div>
+    </div>
+    <hr>
+  <%end %>
+</div>
